@@ -1,12 +1,13 @@
 const { test, expect } = require('@playwright/test');
- 
+// import all the playwright libraries
+//two variables stored in  
  
  
  
 test('@Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
    const email = "anshika@gmail.com";
-   const productName = 'zara coat 3';
+   const productName = 'ZARA COAT 3';
    const products = page.locator(".card-body");
    await page.goto("https://rahulshettyacademy.com/client");
    await page.locator("#userEmail").fill(email);
@@ -17,7 +18,7 @@ test('@Client App login', async ({ page }) => {
    console.log(titles);
    const count = await products.count();
    for (let i = 0; i < count; ++i) {
-      if (await products.nth(i).locator("b").textContent() === productName) {
+      if (await products.nth(i).locator("b").textContent() == productName) {
          //add to cart
          await products.nth(i).locator("text= Add To Cart").click();
          break;
