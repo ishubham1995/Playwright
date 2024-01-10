@@ -6,6 +6,7 @@ const { test, expect } = require('@playwright/test');
  
 test('@Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
+   const name= "anish";
    const email = "anshika@gmail.com";
    const productName = 'ZARA COAT 3';
    const products = page.locator(".card-body");
